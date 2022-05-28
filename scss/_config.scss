@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+$font-open-sans: 'Open Sans', sans-serif;
+$font-poppins: 'Poppins', sans-serif;
+$violet: hsl(257, 40%, 49%);
+$soft-magenta: hsl(300, 69%, 71%);
+
+@mixin flexProperty($prop1, $prop2, $prop3, $prop4) {
+    display: $prop1;
+    align-items: $prop2;
+    justify-content: $prop3;
+    flex-direction: $prop4;
+}
+
+@mixin textProperty($prop1, $prop2, $prop3, $prop4, $prop5, $prop6) {
+    color: $prop1;
+    font-family: $prop2; 
+    font-size: $prop3;
+    font-weight: $prop4;
+    line-height: $prop5;
+    text-align: $prop6;
+}

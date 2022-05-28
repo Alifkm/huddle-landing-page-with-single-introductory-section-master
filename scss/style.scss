@@ -1,0 +1,165 @@
+@import 'config';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    background-image: url('../images/bg-desktop.svg');
+    background-color: $violet;
+
+    .container {
+        height: 100%;
+        @include flexProperty(flex, center, center, column);
+
+       .wrapper-top {
+            @include flexProperty(flex, center, center, row);
+            margin: 50px 20px 0 20px;
+
+            .wrapper-left {            
+                @include flexProperty(flex, null, center, column);
+                margin: 0 20px;
+
+                img:nth-child(1) {
+                    width: 200px;
+                    margin-bottom: 50px;
+                }
+            }
+
+            .wrapper-right {
+                width: 400px;
+                @include flexProperty(flex, null, center, column);
+                margin: 0 20px;
+            
+                h1 {
+                    @include textProperty(white, $font-poppins, 32px, 600, null, null);
+                    margin-bottom: 20px;
+                }
+    
+                p {
+                    @include textProperty(darken(white, 10%), $font-open-sans, 14px, 400, null, null);
+                    margin-bottom: 20px;
+                }
+    
+                button {
+                    background-color: white;
+                    @include textProperty($violet, $font-poppins, 14px, 500, null, center);
+                    color: $violet;
+                    border: none;
+                    border-radius: 30px;
+                    width: 150px;
+                    padding: 15px 30px;
+                }
+
+                button:hover {
+                    background-color: $soft-magenta;
+                    cursor: pointer;
+                    color: white;
+                }
+    
+            }
+       
+        }
+
+        .wrapper-bottom {
+            @include flexProperty(flex, flex-start, flex-end, row);
+            width: 1150px;
+            float: right;
+
+            i {
+                @include flexProperty(flex, center, center, null);
+                margin: 0 5px;
+                color: white;
+                width: 30px;
+                height: 30px;
+                border: 1px solid white;
+                border-radius: 50%;
+            }
+
+            i:hover {
+                cursor: pointer;
+                color: $soft-magenta;
+                border: 1px solid $soft-magenta;
+                
+            }
+        }
+
+        @media only screen and (max-width: 1200px) {
+            height: 1100px;
+
+            .wrapper-top {
+                @include flexProperty(flex, center, center, column);
+                margin: 50px 20px 0 20px;
+    
+                .wrapper-left {            
+                    @include flexProperty(flex, null, center, column);
+                }
+    
+                .wrapper-right {
+                    @include flexProperty(flex, center, center, column);
+                    margin-top: 50px;
+                    
+                    h1 {
+                        @include textProperty(white, $font-poppins, 32px, 600, null, center);
+                    }
+        
+                    p {
+                        @include textProperty(darken(white, 10%), $font-open-sans, 14px, 400, null, center);
+                    }
+                }
+           
+            }
+
+            .wrapper-bottom {
+                @include flexProperty(flex, center, center, row);
+                margin-top: 50px;
+                width: 100%;
+            }
+    
+        }
+
+        @media only screen and (max-width: 760px) {
+            height: 1000px;
+
+            .wrapper-top {
+                .wrapper-left {   
+                    width: 350px;
+                    margin: 0;
+                    
+                    img:nth-child(1) {
+                        margin-bottom: 50px;
+                    }
+
+                    img:nth-child(2) {
+                        margin-bottom: 50px;
+                    }
+                }
+    
+                .wrapper-right {
+                    width: 350px;
+                    margin: 30px 0 0 0;
+                    
+                    h1 {
+                        @include textProperty(white, $font-poppins, 24px, 600, null, center);
+                    }
+        
+                    p {
+                        @include textProperty(darken(white, 10%), $font-open-sans, 14px, 400, null, center);
+                    }
+                }
+           
+            }
+
+            .wrapper-bottom {
+                @include flexProperty(flex, center, center, row);
+                margin-top: 50px;
+                width: 350px;
+            }
+    
+        }
+    }
+
+}
